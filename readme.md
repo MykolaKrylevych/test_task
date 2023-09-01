@@ -56,3 +56,8 @@ This command should return the last 5 activities saved in the database.
  - Make sure that you include a dependencies file (requirements.txt, gemfile, package.json, etc.). But don't include any virtual environment or packages installed in your repository.
  - Add unit tests for your work.
 
+
+## Complited task output:
+![image](https://github.com/MykolaKrylevych/test_task/assets/94646888/21f75bff-1b1d-4e1c-851d-68b292945a1f)
+
+
