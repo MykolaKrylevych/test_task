@@ -68,12 +68,18 @@ def main():
                                             ' database if you dont use optional params')
     parser_new.set_defaults(func=add_new_data)
 
-    parser_new.add_argument('--type', default=None, help='This option add type of activities')
-    parser_new.add_argument('--participants', default=None, help='This option set count of participants in request')
-    parser_new.add_argument('--price_min', type=float, default=None,help='This option set min price in range')
-    parser_new.add_argument('--price_max', type=float, default=None, help='This option set max price in range')
-    parser_new.add_argument('--accessibility_min', type=float, default=None,help='This option')
-    parser_new.add_argument('--accessibility_max', type=float, default=None, help='This option')
+    parser_new.add_argument('--type', default=None, nargs='?', help='This option add type of activities',
+                            required=False)
+    parser_new.add_argument('--participants', default=None, nargs='?',
+                            help='This option set count of participants in request')
+    parser_new.add_argument('--price_min', type=float, default=None, nargs='?',
+                            help='This option set min price in range')
+    parser_new.add_argument('--price_max', type=float, default=None, nargs='?',
+                            help='This option set max price in range')
+    parser_new.add_argument('--accessibility_min', type=float, default=None, nargs='?',
+                            help='This option set a min of accessibility range')
+    parser_new.add_argument('--accessibility_max', type=float, default=None, nargs='?',
+                            help='This option set a max of accessibility range')
 
     parser_args_data = parser.parse_args()
     if hasattr(parser_args_data, 'func'):
@@ -87,4 +93,6 @@ def main():
 
 
 if __name__ == '__main__':
-    print(main())
+    result = main()
+    if result:
+        print(result)
